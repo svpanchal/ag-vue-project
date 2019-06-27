@@ -1034,6 +1034,14 @@ address@^1.0.3:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/address/-/address-1.1.0.tgz#ef8e047847fcd2c5b6f50c16965f924fd99fe709"
 
+ag-grid-community@^21.0.1:
+  version "21.0.1"
+  resolved "https://registry.yarnpkg.com/ag-grid-community/-/ag-grid-community-21.0.1.tgz#8cf6096de7e9ae6144bf5aced89b03814ea7b034"
+
+ag-grid-vue@^21.0.1:
+  version "21.0.1"
+  resolved "https://registry.yarnpkg.com/ag-grid-vue/-/ag-grid-vue-21.0.1.tgz#16cc1b9f712b4ba9d968ba778a3862f6302ddab8"
+
 ajv-errors@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/ajv-errors/-/ajv-errors-1.0.1.tgz#f35986aceb91afadec4102fbd85014950cefa64d"
@@ -6503,6 +6511,10 @@ vm-browserify@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.0.tgz#bd76d6a23323e2ca8ffa12028dc04559c75f9019"
 
+vue-class-component@^7.0.1:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.1.0.tgz#b33efcb10e17236d684f70b1e96f1946ec793e87"
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"
@@ -6516,6 +6528,13 @@ vue-loader@^15.7.0:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-property-decorator@^8.2.1:
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/vue-property-decorator/-/vue-property-decorator-8.2.1.tgz#3791662033b20d20d098cb20e86fd23842982508"
+  dependencies:
+    vue "^2.6.10"
+    vue-class-component "^7.0.1"
 
 vue-style-loader@^4.1.0:
   version "4.1.2"

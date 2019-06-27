@@ -1,22 +1,45 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <ag-grid-vue style="width: 500px; height: 500px;"
+                 class="ag-theme-balham"
+                 :columnDefs="columnDefs"
+                 :rowData="rowData">
+    </ag-grid-vue>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import {AgGridVue} from "ag-grid-vue";
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'App',
+        data() {
+            return {
+                columnDefs: null,
+                rowData: null
+            }
+        },
+        components: {
+            AgGridVue
+        },
+        beforeMount() {
+            this.columnDefs = [
+                {headerName: 'Make', field: 'make'},
+                {headerName: 'Model', field: 'model'},
+                {headerName: 'Price', field: 'price'}
+            ];
+
+            this.rowData = [
+                {make: 'Toyota', model: 'Celica', price: 35000},
+                {make: 'Ford', model: 'Mondeo', price: 32000},
+                {make: 'Porsche', model: 'Boxter', price: 72000}
+            ];
+        }
+    }
 </script>
 
 <style lang="scss">
+  @import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
+  @import "../node_modules/ag-grid-community/dist/styles/ag-theme-balham.css";
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
