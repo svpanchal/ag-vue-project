@@ -19,8 +19,11 @@
         data() {
             return {
                 columnDefs: null,
-                rowData: null
-            }
+                rowData: null,
+                gridApi: null,
+                columnApi: null,
+                autoGroupColumnDef: null
+              }
         },
         components: {
             AgGridVue
@@ -39,17 +42,28 @@
         },
         beforeMount() {
             this.columnDefs = [
-                { headerName: 'Make', field: 'make', sortable: true, filter: true, checkboxSelection: true },
+                { headerName: 'Make', field: 'make', sortable: true, filter: true, checkboxSelection: true, rowGroup: true },
                 { headerName: 'Model', field: 'model', sortable: true, filter: true },
                 { headerName: 'Price', field: 'price', sortable: true, filter: true }
             ];
 
+            this.autoGroupColumnDef = {
+                headerName: 'Model',
+                field: 'model',
+                cellRenderer: 'agGroupCellRenderer',
+                cellRendererParams: {
+                    checkbox: true
+                }
+            };    
             // this.rowData = [
             //     { make: 'Toyota', model: 'Celica', price: 35000 },
             //     { make: 'Ford', model: 'Mondeo', price: 32000 },
             //     { make: 'Porsche', model: 'Boxter', price: 72000 }
             // ];
-          fetch('https://api.myjson.com/bins/15psn9') // displaying dynamic data 
+          // fetch('https://api.myjson.com/bins/15psn9') // displaying dynamic data 
+          //   .then(result => result.json())
+          //   .then(rowData => this.rowData = rowData);
+          fetch('https://api.myjson.com/bins/ly7d1') // displaying data set for grouping 
             .then(result => result.json())
             .then(rowData => this.rowData = rowData);
         }
