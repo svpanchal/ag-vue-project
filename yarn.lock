@@ -1038,6 +1038,10 @@ ag-grid-community@^21.0.1:
   version "21.0.1"
   resolved "https://registry.yarnpkg.com/ag-grid-community/-/ag-grid-community-21.0.1.tgz#8cf6096de7e9ae6144bf5aced89b03814ea7b034"
 
+ag-grid-enterprise@^21.0.1:
+  version "21.0.1"
+  resolved "https://registry.yarnpkg.com/ag-grid-enterprise/-/ag-grid-enterprise-21.0.1.tgz#a84796a25c9754c2535c9ea47d3146e57e0b2960"
+
 ag-grid-vue@^21.0.1:
   version "21.0.1"
   resolved "https://registry.yarnpkg.com/ag-grid-vue/-/ag-grid-vue-21.0.1.tgz#16cc1b9f712b4ba9d968ba778a3862f6302ddab8"

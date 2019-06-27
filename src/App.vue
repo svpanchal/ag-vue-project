@@ -1,9 +1,14 @@
 <template>
+  <div>
+    <button @click="getSelectedRows()">Get Selected Rows</button>
     <ag-grid-vue style="width: 500px; height: 500px;"
                  class="ag-theme-balham"
                  :columnDefs="columnDefs"
-                 :rowData="rowData">
+                 :rowData="rowData"
+                 rowSelection="multiple"
+                 @grid-ready="onGridReady">
     </ag-grid-vue>
+  </div>
 </template>
 
 <script>
@@ -20,9 +25,21 @@
         components: {
             AgGridVue
         },
+        methods: {
+            onGridReady(params) {
+                this.gridApi = params.api;
+                this.columnApi = params.columnApi;
+            },
+            getSelectedRows() {
+                const selectedNodes = this.gridApi.getSelectedNodes();
+                const selectedData = selectedNodes.map( node => node.data );
+                const selectedDataStringPresentation = selectedData.map( node => node.make + ' ' + node.model).join(', ');
+                console.log(`Selected nodes: ${selectedDataStringPresentation}`);
+            }
+        },
         beforeMount() {
             this.columnDefs = [
-                { headerName: 'Make', field: 'make', sortable: true, filter: true },
+                { headerName: 'Make', field: 'make', sortable: true, filter: true, checkboxSelection: true },
                 { headerName: 'Model', field: 'model', sortable: true, filter: true },
                 { headerName: 'Price', field: 'price', sortable: true, filter: true }
             ];
@@ -32,7 +49,7 @@
             //     { make: 'Ford', model: 'Mondeo', price: 32000 },
             //     { make: 'Porsche', model: 'Boxter', price: 72000 }
             // ];
-          fetch('https://api.myjson.com/bins/15psn9')
+          fetch('https://api.myjson.com/bins/15psn9') // displaying dynamic data 
             .then(result => result.json())
             .then(rowData => this.rowData = rowData);
         }
