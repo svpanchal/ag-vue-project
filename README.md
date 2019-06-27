@@ -1,5 +1,12 @@
 # ag-project
 
+
+### Description
+A very simple chart to get used to working with the basic features of ag-Grid within a VueJS component
+
+### ag-Grid Docs
+See [ag-grid docs] (https://www.ag-grid.com/vue-getting-started/) for example
+
 ## Project setup
 ```
 yarn install
